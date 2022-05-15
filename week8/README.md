@@ -158,9 +158,6 @@
 // 2. 写入一定量的 kv 数据, 根据数据大小 1w-50w 自己评估, 结合写入前后的 info memory 信息 , 分析上述不同 value 大小下，平均每个 key 的占用内存空间。
 redis-benchmark -t get,set -r 10000 -q -d 10
 
-used_memory:1712472
-used_memory_human:1.63M
-
 127.0.0.1:6379> memory usage key:000000000116
 (integer) 70
 
