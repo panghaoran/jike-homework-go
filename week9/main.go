@@ -80,8 +80,10 @@ func (bigEndian bigEndian) Read(data []byte) {
 	sequence := bigEndian.Int32(data[_seqOffset:])
 	fmt.Printf("sequence:%v\n", sequence)
 
-	bodyLen := int(packLen - int32(headerLen))
-	fmt.Printf("bodyLen:%v\n", bodyLen)
+	// bodyLen = int(packLen - int32(headerLen)); bodyLen > 0 {
+	// p.Body, err = rr.Pop(bodyLen)
+	body := string(data[_heartOffset:])
+	fmt.Printf("body:%v\n", body)
 }
 
 const (
